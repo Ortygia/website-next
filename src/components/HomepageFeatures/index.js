@@ -17,7 +17,7 @@ const FeatureList = [
     Svg: require('@site/static/img/db.svg').default,
     description: (
       <>
-        Tuned to scan large collections fast!
+        Tuned to scan large collections! Scanning 1TB of music in 14 mins!
       </>
     ),
   },
@@ -30,17 +30,45 @@ const FeatureList = [
       </>
     ),
   },
+  {
+    title: 'Clients',
+    Svg: require('@site/static/img/rust.svg').default,
+    description: (
+      <>
+        Beuitiful clients built using DaisyUI and Tauri! Supporting Mobile & Desktop!
+      </>
+    ),
+  },
+  {
+    title: 'Active',
+    Svg: require('@site/static/img/rust.svg').default,
+    description: (
+      <>
+        Active project with a passion to grow! And thrive!
+      </>
+    ),
+  },
+  {
+    title: 'Simple',
+    Svg: require('@site/static/img/rust.svg').default,
+    description: (
+      <>
+        Simple config. Simple clients. Headache free!
+      </>
+    ),
+  },
 ];
 
 function Feature({Svg, title, description}) {
   return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <h3>{title}</h3>
-        <p>{description}</p>
+    <div className={clsx("col col--4", styles.feature)}>
+      <div className="card">
+        <div className="card__header">
+          <h3>{title}</h3>
+        </div>
+        <div className="card__body">
+          <p>{description}</p>
+        </div>
       </div>
     </div>
   );
@@ -50,7 +78,7 @@ export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
       <div className="container">
-        <div className="row">
+        <div className="row"  style={{margin: 5 + 'em'}}>
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
           ))}
